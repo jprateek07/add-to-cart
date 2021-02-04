@@ -18,7 +18,90 @@
         </ul>
     </nav>
   </div>
+  <div class="container my-md-5">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img src="assets/images/about.jpg"  class="about-img"alt="">
+      </div>
+      <div class="col-md-6 text-center">
+        <h1>ABOUT</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque quisquam repellendus, provident, esse laudantium adipisci qui accusamus fuga illum nisi. Deleniti similique nulla beatae praesentium nobis quae porro laudantium?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque quisquam repellendus, provident, esse laudantium adipisci qui accusamus fuga illum nisi. Deleniti similique nulla beatae praesentium nobis quae porro laudantium?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque quisquam repellendus, provident, esse laudantium adipisci qui accusamus fuga illum nisi. Deleniti similique nulla beatae praesentium nobis quae porro laudantium?</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="text-center">Product wishlist</h1>
+        <table class="table wishlist-table">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Price/kg</th>
+              <th scope="col">Quantity</th>
+              <th scope="col"><span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="btn-inner--text">Add to cart</span></th>
+            </tr>
+          </thead>
+          <tbody id="product-items">
+            <!-- <tr>
+              <td>Onion</td>
+              <td>12</td>
+              <td><div class="d-flex"><button onclick="decrement()" class="btn-sm btn-danger"><span class="btn-inner--icon"><i class="fas fa-minus"></i></span></button><span class="btn-inner--text"><input type="number" name="qty" class="text-center" id="qty" min="1"></span><button class="btn-sm btn-danger" onclick="increment()"><span class="btn-inner--icon"><i class="fa fa-plus" aria-hidden="true"></i></span></button></div></td>
+              <td><a href="#"><button type="button" class="btn-sm btn-danger rounded-pill">Add</button></a></td>
+            </tr>
+            <tr>
+              <td>Potato</td>
+              <td>20</td>
+              <td>3</td>
+              <td><a href="#"><button type="button" class="btn-sm btn-danger">Add to cart</button></a></td>
+            </tr>
+            <tr>
+              <td>Tomato</td>
+              <td>10</td>
+              <td>4</td>
+              <td><a href="#"><button type="button" class="btn-sm btn-danger">Add to cart</button></a></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-center">All products</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">S.No.</th>
+              <th scope="col">Item</th>
+              <th scope="col">Price/Kg</th>
+              <th scope="col">Add to list</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Onion</td>
+              <td>12</td>
+              <td><button onclick='newElement(this);this.disabled=true; ' class="btn"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Potato</td>
+              <td>20</td>
+              <td><button onclick='newElement(this);this.disabled=true; ' class="btn"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Tomato</td>
+              <td>10</td>
+              <td><button onclick='newElement(this);this.disabled=true; ' class="btn"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="assets/js/index.js"></script>
 </body>
 </html>

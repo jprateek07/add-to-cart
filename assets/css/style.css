@@ -3,3 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+input {
+    background-color:transparent;
+    border: 0px solid;
+    height:30px;
+    width:90%;
+    outline: none;
+}
+input:focus {
+    outline:none;
+}
+.about-img{
+    object-fit: cover;
+    height: 334px;
+    width: 334px;
+}
+#qty{
+    width: 50px;
+}
+  
+  

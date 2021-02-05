@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-md-6">
         <h1 class="text-center">Product wishlist</h1>
-        <table class="table wishlist-table">
+        <table class="table wishlist-table" id="wishlist-table">
           <thead>
             <tr>
               <th scope="col">Item</th>
@@ -41,6 +41,7 @@
               <th scope="col">Quantity</th>
               <th scope="col"><span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
                 <span class="btn-inner--text">Add to cart</span></th>
+              <th scope="col">Remove</th>
             </tr>
           </thead>
           <tbody id="product-items">
@@ -67,7 +68,7 @@
       </div>
       <div class="col-md-6">
         <h1 class="text-center">All products</h1>
-        <table class="table">
+        <table class="table" id="product-table">
           <thead>
             <tr>
               <th scope="col">S.No.</th>

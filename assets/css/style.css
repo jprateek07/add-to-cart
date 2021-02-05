@@ -21,5 +21,14 @@ input:focus {
 #qty{
     width: 50px;
 }
-  
+.vegetables{
+    height: 86px;
+    width: 119px;
+    box-shadow: -1px 7px 21px -7px rgb(31 45 61 / 10%);
+    border: 1px solid white;
+    border-radius: 50%;
+}
+#product-table{
+    box-shadow: -1px 7px 21px -7px rgb(31 45 61 / 10%);
+}
   

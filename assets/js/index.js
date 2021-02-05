@@ -5,7 +5,7 @@ function newElement(e) {
         "<td><div class='d-flex'><button onclick='decrement(this)' class='btn-sm btn-danger'><span class='btn-inner--icon'><i class='fas fa-minus'></i></span></button><span class='btn-inner--text'><input type='number' name='qty' class='text-center' id='qty' min='1' value='1'></span><button class='btn-sm btn-danger' onclick='increment(this)'><span class='btn-inner--icon'><i class='fa fa-plus' aria-hidden='true'></i></span></button></div></td>" +
         "<td><button type='button' class='btn-sm btn-success rounded-pill'>Add</button></td>"+
         "<td><button type='button' onclick='deleteRow(this)' class='btn-sm btn-danger rounded-pill'>Remove</button></td>"+
-        "</tr>");
+        "</tr>");        
 }
 function increment(curr)
 {

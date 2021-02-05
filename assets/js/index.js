@@ -3,6 +3,7 @@ function newElement(e) {
         "<td>" + e.parentNode.parentNode.childNodes[3].innerHTML+ "</td>" +
         "<td>" +e.parentNode.parentNode.childNodes[5].innerHTML + "</td>" +
         "<td><div class='d-flex'><button onclick='decrement(this)' class='btn-sm btn-danger'><span class='btn-inner--icon'><i class='fas fa-minus'></i></span></button><span class='btn-inner--text'><input type='number' name='qty' class='text-center' id='qty' min='1' value='1'></span><button class='btn-sm btn-danger' onclick='increment(this)'><span class='btn-inner--icon'><i class='fa fa-plus' aria-hidden='true'></i></span></button></div></td>" +
+        "<td>"+'Rs.'+e.parentNode.parentNode.childNodes[5].innerHTML + "</td>"+
         "<td><button type='button' class='btn-sm btn-success rounded-pill'>Add</button></td>"+
         "<td><button type='button' onclick='deleteRow(this)' class='btn-sm btn-danger rounded-pill'>Remove</button></td>"+
         "</tr>");        
@@ -10,10 +11,18 @@ function newElement(e) {
 function increment(curr)
 {
     curr.parentNode.childNodes[1].childNodes[0].stepUp();
+    var itemPrice=curr.parentNode.parentNode.parentNode.childNodes[1].innerHTML
+    var qty=curr.parentNode.parentNode.childNodes[0].childNodes[1].childNodes[0].value
+    var totalAmount=itemPrice*qty
+    curr.parentNode.parentNode.parentNode.childNodes[3].innerHTML="Rs."+totalAmount
 }
 function decrement(curr)
 {
     curr.parentNode.childNodes[1].childNodes[0].stepDown();
+    var itemPrice=curr.parentNode.parentNode.parentNode.childNodes[1].innerHTML
+    var qty=curr.parentNode.parentNode.childNodes[0].childNodes[1].childNodes[0].value
+    var totalAmount=itemPrice*qty
+    curr.parentNode.parentNode.parentNode.childNodes[3].innerHTML="Rs."+totalAmount
 }
 function deleteRow(r) {
     var index = r.parentNode.parentNode.rowIndex;

@@ -22,13 +22,47 @@ input:focus {
     width: 50px;
 }
 .vegetables{
-    height: 86px;
-    width: 119px;
+    height:148px;
+    width: 100%;
     box-shadow: -1px 7px 21px -7px rgb(31 45 61 / 10%);
     border: 1px solid white;
     border-radius: 50%;
 }
+.vegetables:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+}
 #product-table{
     box-shadow: -1px 7px 21px -7px rgb(31 45 61 / 10%);
 }
+.checked {
+    color: orange;
+  }
+.cart-item-image{
+    height: 75px;
+    width: 75px;
+}
+#cart-table tr td{
+    vertical-align: middle;
+}
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 12px;
+      background: #ff0000;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+  }
   

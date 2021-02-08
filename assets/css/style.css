@@ -65,4 +65,35 @@ input:focus {
       vertical-align: top;
       margin-left: -10px; 
   }
-  
+  .about-image-section{
+   background-color:rgb(255 204 204);
+   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;   
+  }
+  .cart-item-name{
+      font-size: 1rem;
+  }
+  .dec-btn{
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-color: #C82333;
+    text-align: center;
+    cursor: pointer;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0; 
+  }
+  @media screen and (max-width:767px)
+  {
+      #qty{
+          width: 17px;
+      }
+      .cart-item-image{
+        height: 40px;
+        width: 40px;
+    }
+  }

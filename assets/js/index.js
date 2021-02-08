@@ -1,5 +1,7 @@
 function addToCart(e)
 {
+    e.parentNode.parentNode.parentNode.classList.add('cart-animation')
+    document.getElementById("cart-icon").classList.add('cart-icon')
     var itemName=e.parentNode.parentNode.parentNode.querySelector(".item-name").innerHTML
     // var item=e.parentNode.parentNode.parentNode.querySelector(".vegetable-img").innerHTML
     var imge=e.parentNode.parentNode.parentNode.querySelector(".vegetable-img").childNodes[1]
@@ -17,7 +19,8 @@ function addToCart(e)
     "<td><button type='button' onclick='deleteRow(this)' class='btn-sm btn-danger rounded-pill'><i class='fa fa-trash' aria-hidden='true'></i></button></td>"+
     "</tr>");
     var cartRows=e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector("#cart-table").rows.length
-    e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector("#lblCartCount").innerHTML=cartRows-1    
+    e.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector("#lblCartCount").innerHTML=cartRows-1 
+    updateTotalAmount()  
 }
 function  updateTotalAmount()
 {
@@ -28,7 +31,6 @@ function  updateTotalAmount()
     {
         total=parseInt(document.getElementById("cart-table").rows[i].cells[2].innerHTML.substring(4))+total
     }
-    alert(total)
     document.getElementById("final-amt").innerHTML=''
     document.getElementById("final-amt").innerHTML=total    
 
@@ -48,7 +50,8 @@ function decrement(curr)
     var itemPrice=curr.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector(".item-price").innerHTML
     var qty=curr.parentNode.querySelector("#qty").value
     var totalAmount=itemPrice*qty
-    curr.parentNode.parentNode.parentNode.childNodes[2].innerHTML="Rs."+totalAmount
+    curr.parentNode.parentNode.parentNode.childNodes[2].innerHTML="Rs. "+totalAmount
+    updateTotalAmount()
 }
 function deleteRow(r) {
     var cartItem=r.parentNode.parentNode.querySelector(".cart-item-name").innerHTML
@@ -66,5 +69,6 @@ function deleteRow(r) {
     r.parentNode.parentNode.parentNode.parentNode.deleteRow(index)
     var cartRows=bodypart.querySelector("#cart-table").rows.length
     bodypart.querySelector("#lblCartCount").innerHTML=cartRows-1
+    updateTotalAmount()
   }
   

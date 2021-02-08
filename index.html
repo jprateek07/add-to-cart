@@ -11,16 +11,16 @@
 <body>
   <div class="container">
     <nav class="navbar animate__animated animate__zoomIn fixed-top navbar-expand-md bg-danger navbar-dark">
-      <a class="navbar-brand" href="#">Shopping Cart</a>
+      <a class="navbar-brand" href="#">Marketo</a>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <button class="nav-link btn btn-danger"  data-toggle="modal" data-target="#myModal" id="cart"><i class="fa fa-shopping-cart text-white" aria-hidden="true"></i><span class='badge badge-danger' id='lblCartCount'> 0 </span></button>
+            <button class="nav-link btn btn-danger"  data-toggle="modal" data-target="#myModal" id="cart"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="true"></i><span class='badge badge-danger' id='lblCartCount'> 0 </span></button>
           </li>    
         </ul>
     </nav>
   </div>
   
-  <div class="container-fluid mt-5">
+  <div class="container-fluid mt-5 mt-md-5">
     <div class="row">
       <div class="col-md-12">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -44,70 +44,31 @@
       </div>
     </div>
   </div>
-  <div class="container my-md-5">
-    <div class="row">
-      <div class="col-md-6 text-center about-image-section">
-        <img src="assets/images/landingpage (2).png"  class="about-img"alt="">
-      </div>
-      <div class="col-md-6 text-center">
-        <h1>ABOUT</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque quisquam repellendus, provident, esse laudantium adipisci qui accusamus fuga illum nisi. Deleniti similique nulla beatae praesentium nobis quae porro laudantium?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque quisquam repellendus, provident, esse laudantium adipisci qui accusamus fuga illum nisi. Deleniti similique nulla beatae praesentium nobis quae porro laudantium?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque quisquam repellendus, provident, esse laudantium adipisci qui accusamus fuga illum nisi. Deleniti similique nulla beatae praesentium nobis quae porro laudantium?</p>
-      </div>
-    </div>
-  </div>
-  <!-- <div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div>
-    <h1 class="text-center mt-md-5">Vegetables</h1>
+    <h1 class="text-center mt-md-5 mt-5 mb-3">Vegetables</h1>
   </div>
   <div class="container mb-md-5 mt-md-5">
       <div class="row">
-        <div class="col-md-3"><div class="card" >
-          <div class="vegetable-img">
-          <img src="assets/images/potato.png" class="card-img-top vegetables" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title item-name">Potato</h5>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            <p class="text-dark">1kg</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="card-text font-weight-bold">&#x20B9<span class="item-price">12</span></p>
-              <button type="button" class="btn btn-outline-danger rounded-pill add-to-cart" onclick="addToCart(this);this.disabled=true">Add to cart</button>  
+        <div class="col-md-3">
+          <div class="card my-4" >
+            <div class="vegetable-img">
+            <img src="assets/images/potato.png" class="card-img-top vegetables" alt="...">
             </div>
-          </div>
+            <div class="card-body">
+              <h5 class="card-title item-name">Potato</h5>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+              <p class="text-dark">1kg</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="card-text font-weight-bold">&#x20B9<span class="item-price">12</span></p>
+                <button type="button" class="btn btn-outline-danger rounded-pill add-to-cart" onclick="addToCart(this);this.disabled=true">Add to cart</button>  
+              </div>
+            </div>
         </div></div>
-        <div class="col-md-3"><div class="card" >
+        <div class="col-md-3"><div class="card my-4" >
           <div class="vegetable-img">
             <img src="assets/images/red-onion.png" class="card-img-top vegetables" alt="...">
           </div>
@@ -125,7 +86,7 @@
                 </div>
               </div>
         </div></div>
-        <div class="col-md-3"><div class="card" >
+        <div class="col-md-3"><div class="card my-4" >
           <div class="vegetable-img">
           <img src="assets/images/onion.png" class="card-img-top vegetables" alt="...">
           </div>
@@ -143,7 +104,7 @@
                 </div>
               </div>
         </div></div>
-        <div class="col-md-3"><div class="card" >
+        <div class="col-md-3"><div class="card my-4" >
           <div class="vegetable-img">
           <img src="assets/images/potato.png" class="card-img-top vegetables" alt="...">
           </div>
@@ -164,11 +125,11 @@
       </div>
   </div>
   <div>
-    <h1 class="text-center mt-md-5 mt-md-5">Fruits</h1>
+    <h1 class="text-center mt-md-5 mt-md-5 mt-5 mb-5">Fruits</h1>
   </div>
   <div class="container mb-md-5">
     <div class="row">
-      <div class="col-md-3"><div class="card" >
+      <div class="col-md-3"><div class="card my-4" >
         <div class="vegetable-img">
         <img src="assets/images/banana.png" class="card-img-top vegetables" alt="...">
         </div>
@@ -186,7 +147,7 @@
           </div>
         </div>
       </div></div>
-      <div class="col-md-3"><div class="card" >
+      <div class="col-md-3"><div class="card my-4" >
         <div class="vegetable-img">
         <img src="assets/images/cherry.png" class="card-img-top vegetables" alt="...">
         </div>
@@ -204,7 +165,7 @@
               </div>
             </div>
       </div></div>
-      <div class="col-md-3"><div class="card" >
+      <div class="col-md-3"><div class="card my-4" >
         <div class="vegetable-img">
         <img src="assets/images/apple.png" class="card-img-top vegetables" alt="...">
         </div>
@@ -222,7 +183,7 @@
               </div>
             </div>
       </div></div>
-      <div class="col-md-3"><div class="card" >
+      <div class="col-md-3"><div class="card my-4" >
         <div class="vegetable-img">
         <img src="assets/images/lichi.png" class="card-img-top vegetables" alt="...">
         </div>
@@ -242,6 +203,9 @@
       </div></div>
     </div>
 </div>
+<footer class="text-center bg-danger d-flex justify-content-center align-items-center">
+  <h6 class="text-white">Developed by alvrio labs</h6>
+</footer>
      <!-- The Modal -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -267,8 +231,10 @@
               <tbody id="cart-items">
               </tbody>
             </table>
-        <div class="total-amount">
+            <hr>
+        <div class="total-amount d-flex justify-content-around">
           <h4>Total Amount: &#x20B9<span id="final-amt">0</span></h4>
+          <button class="btn btn-success">Checkout</button>
         </div>
         </div>
         

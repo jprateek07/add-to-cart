@@ -87,6 +87,25 @@ input:focus {
       appearance: none;
       margin: 0; 
   }
+.cart-animation{
+    animation: animate 0.3s ease ;
+}
+footer{
+    height: 50px;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(40px) scale(0.5);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+  }
+ 
+/* media query */
   @media screen and (max-width:767px)
   {
       #qty{
@@ -95,5 +114,8 @@ input:focus {
       .cart-item-image{
         height: 40px;
         width: 40px;
+    }
+    .carousel img{
+        height: 220px;
     }
   }

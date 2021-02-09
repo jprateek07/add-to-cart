@@ -1,9 +1,7 @@
 function addToCart(e)
 {
     e.parentNode.parentNode.parentNode.classList.add('cart-animation')
-    document.getElementById("cart-icon").classList.add('cart-icon')
     var itemName=e.parentNode.parentNode.parentNode.querySelector(".item-name").innerHTML
-    // var item=e.parentNode.parentNode.parentNode.querySelector(".vegetable-img").innerHTML
     var imge=e.parentNode.parentNode.parentNode.querySelector(".vegetable-img").childNodes[1]
     var amt=e.parentNode.querySelector(".item-price").innerHTML
     var qty=1
@@ -55,7 +53,6 @@ function decrement(curr)
 }
 function deleteRow(r) {
     var cartItem=r.parentNode.parentNode.querySelector(".cart-item-name").innerHTML
-    // console.log(r.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector(".add-to-cart").disabled=true)
     var index = r.parentNode.parentNode.rowIndex;
     const elements = document.querySelectorAll('.item-name');
     Array.from(elements).forEach((element, index) => {

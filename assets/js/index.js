@@ -94,4 +94,97 @@ function deleteRow(r,id) {
     UpdateCart()
     updateTotalAmount()
   }
-  
+  function switchVisible() {
+    if (document.getElementById('cart-table')) {
+
+        if (document.getElementById('cart-table').style.display == 'none') {
+            document.getElementById('cart-table').style.display = 'block';
+            document.getElementById('checkout-form').style.display = 'none';
+        }
+        else {
+            document.getElementById('cart-table').style.display = 'none';
+            document.getElementById('checkout-form').style.display = 'block';
+        }
+    }
+}
+  $(".checkout").click(function(){
+    $("#cart-table").toggle();
+    if(localStorage.getItem('name') && localStorage.getItem('pw')) 
+    {
+        var options = {
+            "key": "rzp_test_rGbrc5hXxJ9r9I",
+            "amount": 2000, // Example: 2000 paise = INR 20
+            "name": "MERCHANT name",
+            "description": "description",
+            "image": "img/logo.png",// COMPANY LOGO
+            "handler": function (response) {
+                console.log(response);
+                // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+            },
+            "prefill": {
+                "name": "ABC", // pass customer name
+                "email": 'A@A.COM',// customer email
+                "contact": '+919123456780' //customer phone no.
+            },
+            "notes": {
+                "address": "address" //customer address 
+            },
+            "theme": {
+                "color": "#15b8f3" // screen color
+            }
+        };
+        console.log(options);
+        var propay = new Razorpay(options);
+        propay.open();
+    }
+    else{
+        $("#checkout-form").toggle(); 
+    }
+  });
+
+var Username = document.getElementById('name');
+var pw = document.getElementById('pw');
+
+// storing input from register-form
+function store() {
+    localStorage.setItem('name', Username.value);
+    localStorage.setItem('pw', pw.value);
+}
+
+// check if stored data from register-form is equal to entered data in the   login-form
+function check() {
+
+    // stored data from the register-form
+    var storedName = localStorage.getItem('name');
+    var storedPw = localStorage.getItem('pw');
+
+    // entered data from the login-form
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+
+    // check if stored data from register-form is equal to data from login form
+    if(userName.value == storedName && userPw.value == storedPw) {
+        var settings = {
+            "url": "https://api.razorpay.com/v1/orders",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+              "Content-Type": "application/json",
+              "Authorization": "Basic cnpwX3Rlc3RfckdicmM1aFh4SjlyOUk6VDU0N05KdDhQcURPVDhZakZ5V29UTUpv",
+              "Access-Control-Allow-Origin":"*"
+            },
+            "crossDomain":true,
+            "data": JSON.stringify({"amount":50000,"currency":"INR"})
+          };
+          
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+    }else {
+        alert('ERROR.');
+    }
+}
+
+// paypal config keys
+// key id:rzp_test_rGbrc5hXxJ9r9I
+//key secret:T547NJt8PqDOT8YjFyWoTMJo

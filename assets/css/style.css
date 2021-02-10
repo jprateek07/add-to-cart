@@ -93,6 +93,9 @@ input:focus {
 footer{
     height: 50px;
 }
+#checkout-form{
+    display: none;
+}
 @keyframes animate{
     0%{
         transform: translateY(0);

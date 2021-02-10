@@ -1,0 +1,18 @@
+[
+    {"id":1,"itemName":"potato","itemPrice":12,"itemSrc":"assets/images/potato.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":2,"itemName":"red-onion","itemPrice":10,"itemSrc":"assets/images/red-onion.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":3,"itemName":"okra","itemPrice":15,"itemSrc":"assets/images/okra.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":4,"itemName":"onion","itemPrice":20,"itemSrc":"assets/images/onion.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":5,"itemName":"cherry","itemPrice":12,"itemSrc":"assets/images/cherry.png","category":"fruit","min_purchase_quantity":1},
+    {"id":6,"itemName":"lichi","itemPrice":12,"itemSrc":"assets/images/lichi.png","category":"fruit","min_purchase_quantity":1},
+    {"id":7,"itemName":"apple","itemPrice":12,"itemSrc":"assets/images/apple.png","category":"fruit","min_purchase_quantity":1},
+    {"id":8,"itemName":"banana","itemPrice":12,"itemSrc":"assets/images/banana.png","category":"fruit","min_purchase_quantity":1},
+    {"id":9,"itemName":"carrot","itemPrice":15,"itemSrc":"assets/images/carrot.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":10,"itemName":"broccoli","itemPrice":15,"itemSrc":"assets/images/broccoli.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":11,"itemName":"okra","itemPrice":15,"itemSrc":"assets/images/okra.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":12,"itemName":"okra","itemPrice":15,"itemSrc":"assets/images/okra.png","category":"vegetable","min_purchase_quantity":1},
+    {"id":13,"itemName":"lichi","itemPrice":12,"itemSrc":"assets/images/lichi.png","category":"fruit","min_purchase_quantity":1},
+    {"id":14,"itemName":"banana","itemPrice":12,"itemSrc":"assets/images/banana.png","category":"fruit","min_purchase_quantity":1},
+    {"id":15,"itemName":"lichi","itemPrice":12,"itemSrc":"assets/images/lichi.png","category":"fruit","min_purchase_quantity":1},
+    {"id":16,"itemName":"apple","itemPrice":12,"itemSrc":"assets/images/apple.png","category":"fruit","min_purchase_quantity":1}
+]

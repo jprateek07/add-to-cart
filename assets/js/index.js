@@ -1,5 +1,8 @@
 var cartData=[]
 var data=[]
+var userEmail=''
+var userPwd=''
+checkCartButton()
 $.ajax({
     url:'assets/data.json',
     dataType:'json',
@@ -30,14 +33,10 @@ function addToCart(id)
 {
     const currentObject = Object.values(data).find(item => item.id === id);
     cartData.push(currentObject)
-    $("#cart-items").append("<tr>" +
-    "<td><img src='"+currentObject.itemSrc+"' class='cart-item-image'><p class='text-center cart-item-name'>"+currentObject.itemName+"</p></td>" +
-    "<td><div class='d-flex align-items-center'><div class='dec-btn' onclick='decrement(this,"+currentObject.id+")'><i class='fas fa-minus text-white'></i></div><span class='btn-inner--text'><input type='number' name='qty' class='text-center' id='qty' min='1' value='1'></span><div class='dec-btn' onclick='increment(this,"+currentObject.id+")'><i class='fa fa-plus text-white' aria-hidden='true'></i></div></div></td>" +
-    "<td id='totalamt'> Rs. "+currentObject.itemPrice+"</td>"+
-    "<td><button type='button' onclick='deleteRow(this,"+currentObject.id+")' class='btn-sm btn-danger rounded-pill'><i class='fa fa-trash' aria-hidden='true'></i></button></td>"+
-    "</tr>");
-    document.getElementById("lblCartCount").innerHTML=document.getElementById("cart-table").rows.length-1
-    updateTotalAmount()  
+    document.getElementById("lblCartCount").innerHTML=cartData.length
+    UpdateCart()
+    updateTotalAmount() 
+    checkCartButton() 
 }
 function  updateTotalAmount()
 {
@@ -61,6 +60,7 @@ function increment(curr,id)
     var totalAmount=itemPrice*qty
     curr.parentNode.parentNode.parentNode.childNodes[2].innerHTML="Rs. "+totalAmount
     updateTotalAmount()
+    checkCartButton()
 }
 function decrement(curr,id)
 {
@@ -71,6 +71,7 @@ function decrement(curr,id)
     var totalAmount=itemPrice*qty
     curr.parentNode.parentNode.parentNode.childNodes[2].innerHTML="Rs. "+totalAmount
     updateTotalAmount()
+    checkCartButton()
 }
 function UpdateCart()
 {
@@ -86,6 +87,7 @@ function UpdateCart()
         "</tr>");
     }
     document.getElementById("lblCartCount").innerHTML=document.getElementById("cart-table").rows.length-1
+    checkCartButton()
 }
 function deleteRow(r,id) {
     document.getElementById("image-"+id).disabled=false
@@ -93,28 +95,81 @@ function deleteRow(r,id) {
     cartData=cartData.filter(function(item){return item.id!=id})
     UpdateCart()
     updateTotalAmount()
-  }
-  function switchVisible() {
-    if (document.getElementById('cart-table')) {
-
-        if (document.getElementById('cart-table').style.display == 'none') {
-            document.getElementById('cart-table').style.display = 'block';
-            document.getElementById('checkout-form').style.display = 'none';
-        }
-        else {
-            document.getElementById('cart-table').style.display = 'none';
-            document.getElementById('checkout-form').style.display = 'block';
-        }
-    }
-}
-  $(".checkout").click(function(){
-    $("#cart-table").toggle();
-    if(localStorage.getItem('name') && localStorage.getItem('pw')) 
+    checkCartButton()
+    if(cartData.length==0)
     {
+    location.href = 'index.html';
+    }
+  }
+$(".checkout").click(function(){
+    $("#cart-table").toggle();
+    userEmail=localStorage.getItem('email')
+    userPwd=localStorage.getItem('pw')
+    if(userEmail) 
+    {
+        var amount=document.querySelector("#final-amt").innerHTML
+        var options = {
+            "key": "rzp_test_rGbrc5hXxJ9r9I",
+            "amount": parseInt(amount)*100, // Example: 2000 paise = INR 20
+            "name": "MERCHANT name",
+            "description": "description",
+            "image": "../assets/images/apple.png",// COMPANY LOGO
+            "handler": function (response) {
+                // console.log(response.razorpay_payment_id)
+                // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+            },
+            "prefill": {
+                "name": "ABC", // pass customer name
+                "email": userEmail,// customer email
+                "contact": '+919123456780' //customer phone no.
+            },
+            "notes": {
+                "address": "address" //customer address 
+            },
+            "theme": {
+                "color": "#15b8f3" // screen color
+            }
+        };
+        // console.log(options);
+        var propay = new Razorpay(options);
+        propay.open();
+        cartData=[]
+        UpdateCart()
+    }
+    else{
+        $("#checkout-form").toggle(); 
+    }
+  });
+
+
+
+// storing input from register-form
+function store() {
+   
+    userEmail = document.getElementById('email');
+    userPwd = document.getElementById('pw');
+    localStorage.setItem('email', userEmail.value);
+    localStorage.setItem('pw', userPwd.value);
+    console.log("ASD")
+}
+
+// check if stored data from register-form is equal to entered data in the login-form
+function check() {
+
+    // stored data from the register-form
+    var storedEmail = localStorage.getItem('name');
+    var storedPw = localStorage.getItem('pw');
+
+    // entered data from the login-form
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+
+    // check if stored data from register-form is equal to data from login form
+    if(userName.value == storedEmail && userPw.value == storedPw) {
         var options = {
             "key": "rzp_test_rGbrc5hXxJ9r9I",
             "amount": 2000, // Example: 2000 paise = INR 20
-            "name": "MERCHANT name",
+            "name": "Prateek store",
             "description": "description",
             "image": "img/logo.png",// COMPANY LOGO
             "handler": function (response) {
@@ -136,55 +191,19 @@ function deleteRow(r,id) {
         console.log(options);
         var propay = new Razorpay(options);
         propay.open();
-    }
-    else{
-        $("#checkout-form").toggle(); 
-    }
-  });
-
-var Username = document.getElementById('name');
-var pw = document.getElementById('pw');
-
-// storing input from register-form
-function store() {
-    localStorage.setItem('name', Username.value);
-    localStorage.setItem('pw', pw.value);
-}
-
-// check if stored data from register-form is equal to entered data in the   login-form
-function check() {
-
-    // stored data from the register-form
-    var storedName = localStorage.getItem('name');
-    var storedPw = localStorage.getItem('pw');
-
-    // entered data from the login-form
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
-
-    // check if stored data from register-form is equal to data from login form
-    if(userName.value == storedName && userPw.value == storedPw) {
-        var settings = {
-            "url": "https://api.razorpay.com/v1/orders",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-              "Content-Type": "application/json",
-              "Authorization": "Basic cnpwX3Rlc3RfckdicmM1aFh4SjlyOUk6VDU0N05KdDhQcURPVDhZakZ5V29UTUpv",
-              "Access-Control-Allow-Origin":"*"
-            },
-            "crossDomain":true,
-            "data": JSON.stringify({"amount":50000,"currency":"INR"})
-          };
-          
-          $.ajax(settings).done(function (response) {
-            console.log(response);
-          });
     }else {
-        alert('ERROR.');
+        alert('Invalid credentials');
     }
 }
-
+function checkCartButton(){
+if(document.getElementById("lblCartCount").innerHTML==0)
+{
+    document.getElementById("cart").disabled=true
+}
+else{
+    document.getElementById("cart").disabled=false
+}
+}
 // paypal config keys
 // key id:rzp_test_rGbrc5hXxJ9r9I
 //key secret:T547NJt8PqDOT8YjFyWoTMJo

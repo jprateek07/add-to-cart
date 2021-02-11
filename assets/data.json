@@ -1,18 +1,258 @@
-[
-    {"id":1,"itemName":"potato","itemPrice":12,"itemSrc":"assets/images/potato.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":2,"itemName":"red-onion","itemPrice":10,"itemSrc":"assets/images/red-onion.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":3,"itemName":"okra","itemPrice":15,"itemSrc":"assets/images/okra.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":4,"itemName":"onion","itemPrice":20,"itemSrc":"assets/images/onion.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":5,"itemName":"cherry","itemPrice":12,"itemSrc":"assets/images/cherry.png","category":"fruit","min_purchase_quantity":1},
-    {"id":6,"itemName":"lichi","itemPrice":12,"itemSrc":"assets/images/lichi.png","category":"fruit","min_purchase_quantity":1},
-    {"id":7,"itemName":"apple","itemPrice":12,"itemSrc":"assets/images/apple.png","category":"fruit","min_purchase_quantity":1},
-    {"id":8,"itemName":"banana","itemPrice":12,"itemSrc":"assets/images/banana.png","category":"fruit","min_purchase_quantity":1},
-    {"id":9,"itemName":"carrot","itemPrice":15,"itemSrc":"assets/images/carrot.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":10,"itemName":"broccoli","itemPrice":15,"itemSrc":"assets/images/broccoli.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":11,"itemName":"okra","itemPrice":15,"itemSrc":"assets/images/okra.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":12,"itemName":"okra","itemPrice":15,"itemSrc":"assets/images/okra.png","category":"vegetable","min_purchase_quantity":1},
-    {"id":13,"itemName":"lichi","itemPrice":12,"itemSrc":"assets/images/lichi.png","category":"fruit","min_purchase_quantity":1},
-    {"id":14,"itemName":"banana","itemPrice":12,"itemSrc":"assets/images/banana.png","category":"fruit","min_purchase_quantity":1},
-    {"id":15,"itemName":"lichi","itemPrice":12,"itemSrc":"assets/images/lichi.png","category":"fruit","min_purchase_quantity":1},
-    {"id":16,"itemName":"apple","itemPrice":12,"itemSrc":"assets/images/apple.png","category":"fruit","min_purchase_quantity":1}
+[{
+        "id": 1,
+        "itemName": "potato",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/potato.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 2,
+        "itemName": "red-onion",
+        "itemPrice": 10,
+        "itemSrc": "assets/images/red-onion.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 3,
+        "itemName": "okra",
+        "itemPrice": 15,
+        "itemSrc": "assets/images/okra.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 4,
+        "itemName": "onion",
+        "itemPrice": 20,
+        "itemSrc": "assets/images/onion.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 5,
+        "itemName": "cherry",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/cherry.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 6,
+        "itemName": "lichi",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/lichi.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 7,
+        "itemName": "apple",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/apple.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 8,
+        "itemName": "banana",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/banana.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 9,
+        "itemName": "carrot",
+        "itemPrice": 15,
+        "itemSrc": "assets/images/carrot.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 10,
+        "itemName": "broccoli",
+        "itemPrice": 15,
+        "itemSrc": "assets/images/broccoli.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 11,
+        "itemName": "okra",
+        "itemPrice": 15,
+        "itemSrc": "assets/images/okra.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 12,
+        "itemName": "okra",
+        "itemPrice": 15,
+        "itemSrc": "assets/images/okra.png",
+        "category": "vegetable",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 13,
+        "itemName": "lichi",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/lichi.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 14,
+        "itemName": "banana",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/banana.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 15,
+        "itemName": "lichi",
+        "itemPrice": 12,
+        "itemSrc": "assets/images/lichi.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 16,
+        "itemName": "tshirt",
+        "itemPrice": 220,
+        "itemSrc": "assets/images/t1.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 17,
+        "itemName": "tshirt",
+        "itemPrice": 120,
+        "itemSrc": "assets/images/t2.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 18,
+        "itemName": "tshirt",
+        "itemPrice": 250,
+        "itemSrc": "assets/images/t3.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 19,
+        "itemName": "tshirt",
+        "itemPrice": 420,
+        "itemSrc": "assets/images/t4.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 20,
+        "itemName": "tshirt",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/t2.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 21,
+        "itemName": "lichi",
+        "itemPrice": 120,
+        "itemSrc": "assets/images/lichi.png",
+        "category": "fruit",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 22,
+        "itemName": "tshirt",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/t2.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 23,
+        "itemName": "tshirt",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/t4.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 24,
+        "itemName": "tshirt",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/t3.jpg",
+        "category": "tshirt",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 25,
+        "itemName": "nike",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe1.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 26,
+        "itemName": "nike",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe2.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 27,
+        "itemName": "reebok",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe4.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 28,
+        "itemName": "reebok",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe5.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 29,
+        "itemName": "nike",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe6.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 30,
+        "itemName": "adidas",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe7.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 31,
+        "itemName": "adidas",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe8.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    },
+    {
+        "id": 32,
+        "itemName": "adidas",
+        "itemPrice": 550,
+        "itemSrc": "assets/images/shoe3.jpg",
+        "category": "footwear",
+        "min_purchase_quantity": 1
+    }
+
 ]

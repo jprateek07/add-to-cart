@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <title>Add to cart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <title>Add to cart</title>
 </head>
 <body>
   <div class="container">
-    <nav class="navbar animate__animated animate__zoomIn fixed-top navbar-expand-md bg-danger navbar-dark">
+    <nav
+      class="navbar navbar-expand-lg animate__animated animate__zoomIn fixed-top navbar-fixed-top navbar-expand-md bg-danger navbar-dark">
       <a class="navbar-brand" href="#">Marketo</a>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <button class="btn btn-danger login-btn"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link btn btn-danger"  data-toggle="modal" data-target="#myModal" id="cart"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="true"></i><span class='badge badge-danger' id='lblCartCount'> 0 </span></button>
-          </li>    
-        </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button class="btn btn-danger login-btn" data-toggle="popover" data-placement="bottom" data-html="true"
+            onclick="showPopUp()"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link btn btn-danger animate__animated " data-toggle="modal" data-target="#myModal" id="cart"><i
+              class="fa fa-shopping-cart fa-2x text-white" aria-hidden="true"></i><span class='badge badge-danger'
+              id='lblCartCount'> 0 </span>
+          </button>
+        </li>
+      </ul>
     </nav>
-  </div>  
+  </div>
   <div class="container-fluid mt-5 mt-md-5">
     <div class="row">
       <div class="col-md-12">
@@ -47,12 +56,59 @@
       </div>
     </div>
   </div>
+  <!-- Product category -->
+  <div class="container mt-5 mt-md-5">
+    <h2>Shop by category</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card banner-card" >
+          <img src="assets/images/vegetable.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">VEGETABLES</h5>
+            <p class="card-text">Upto 70% off on all vegetables.</p>
+            <a href="#vegetable" class="btn btn-primary">Buy now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card banner-card" >
+          <img src="assets/images/fruits.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Fruits</h5>
+            <p class="card-text">Upto 70% off on all fruits..</p>
+            <a href="#fruit" class="btn btn-primary">Buy now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card banner-card" >
+          <img src="assets/images/mens.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mens wear</h5>
+            <p class="card-text">Upto 70% off on all mens wear..</p>
+            <a href="#mens-wear" class="btn btn-primary">Buy now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card banner-card" >
+          <img src="assets/images/footwear.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Footwear</h5>
+            <p class="card-text">Upto 70% off on all footwear..</p>
+            <a href="#footwear" class="btn btn-primary">Buy now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Product section -->
   <div>
     <h1 class="text-center mt-md-5 mt-5 mb-3">Vegetables</h1>
   </div>
   <div class="container mb-md-5 mt-md-5">
-      <div class="row vegetable" id="vegetable">
-      </div>
+    <div class="row vegetable" id="vegetable">
+    </div>
   </div>
   <div>
     <h1 class="text-center mt-md-5 mt-md-5 mt-5 mb-5">Fruits</h1>
@@ -60,74 +116,89 @@
   <div class="container mb-md-5">
     <div class="row fruit" id="fruit">
     </div>
-</div>
-<footer class="text-center bg-danger d-flex justify-content-center align-items-center">
-  <h6 class="text-white">Developed by alvrio labs</h6>
-</footer>
-     <!-- The Modal -->
+  </div>
+  <div>
+    <h1 class="text-center mt-md-5 mt-md-5 mt-5 mb-5">Men's wear</h1>
+  </div>
+  <div class="container mb-md-5">
+    <div class="row menswear" id="mens-wear">
+    </div>
+  </div>
+  <div>
+    <h1 class="text-center mt-md-5 mt-md-5 mt-5 mb-5">Men's Footwear</h1>
+  </div>
+  <div class="container mb-md-5">
+    <div class="row footwear" id="footwear">
+    </div>
+  </div>
+  <!-- Footer section -->
+  <footer class="container-fluid text-center bg-danger d-flex justify-content-center align-items-center">
+    <h6 class="text-white">Developed with <span class="text-white">&hearts;</span>  by alvrio labs</h6>
+  </footer>
+  <!-- The Modal -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
-      
+
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Cart Items</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        
+
         <!-- Modal body -->
         <div class="modal-body">
-            <table class="table cart-table" id="cart-table">
-              <thead>
-                <tr>
-                  <th scope="col">Item</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">remove</th>
-                </tr>
-              </thead>
-              <tbody id="cart-items">
-              </tbody>
-            </table>
-            <div class="container" id= "checkout-form">
-              <p class="text-center text-info">*If you are not registered first register then login</p>
-              <h5 class="text-center text-dark">register-form</h5>
-              <form id="register-form">
-                <div class="form-group">
-                  <label for="email">Email address:</label>
-                  <input type="email" class="form-control" placeholder="Enter email" id="email">
-                </div>
-                <div class="form-group">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" placeholder="Enter password" id="pw">
-                </div>
-                <button id="rgstr_btn" type="submit"  class="btn btn-success" onClick="store()">Register</button>
-              </form>
-            <h5 class="text-center text-info">login form</h5>
-           <form id="login-form">
+          <table class="table cart-table" id="cart-table">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Amount</th>
+                <th scope="col">remove</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+            </tbody>
+          </table>
+          <div class="container" id="checkout-form">
+            <p class="text-center text-info">*If you are not registered first register then login</p>
+            <h5 class="text-center text-dark">register-form</h5>
+            <form id="register-form">
               <div class="form-group">
                 <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="userName">
+                <input type="email" class="form-control" placeholder="Enter email" id="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password" id="pw">
+              </div>
+              <button id="rgstr_btn" type="submit" class="btn btn-success" onClick="store()">Register</button>
+            </form>
+            <h5 class="text-center text-info">login form</h5>
+            <form id="login-form">
+              <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" placeholder="Enter email" id="userEmail">
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" placeholder="Enter password" id="userPw">
               </div>
-              <button id="login_btn" type="submit" value="Login" class="btn btn-success" onClick="check()">Register</button>
-          </form>
-            </div>
-            <hr>
-        <div class="total-amount d-flex justify-content-around">
-          <h4>Total Amount: &#x20B9<span id="final-amt">0</span></h4>
-          <button class="btn btn-success checkout" >Checkout</button>
-        </div>
+              <button id="login_btn" type="submit" value="Login" class="btn btn-success"
+                onClick="check()">Register</button>
+            </form>
+          </div>
+          <hr>
+          <div class="total-amount d-flex justify-content-around">
+            <h4>Total Amount: &#x20B9<span id="final-amt">0</span></h4>
+            <button class="btn btn-success checkout">Checkout</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="assets/js/index.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="assets/js/index.js"></script>
 </body>
 </html>

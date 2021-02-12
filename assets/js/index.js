@@ -99,7 +99,7 @@ function deleteRow(r, id) {
     updateTotalAmount()
     checkCartButton()
     if (cartData.length == 0) {
-        location.href = '/';
+        location.href = '/index.html';
     }
 }
 $(".checkout").click(function () {
@@ -135,7 +135,7 @@ $(".checkout").click(function () {
                             document.getElementById("button" + item.id).disabled = false
                         })
                         document.getElementById("final-amt").innerHTML = 0
-                        location.href = './'
+                        location.href = './index.html'
                     }
                 }
             },
@@ -186,7 +186,7 @@ function check() {
                             document.getElementById("button" + item.id).disabled = false
                         })
                         document.getElementById("final-amt").innerHTML = 0
-                        location.href = './'
+                        location.href = './index.html'
                     }
                 }
             },

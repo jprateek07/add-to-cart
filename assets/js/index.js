@@ -119,42 +119,54 @@ $(".checkout").click(function () {
     $("#cart-table").toggle();
     userEmail = localStorage.getItem('email')
     userPwd = localStorage.getItem('pw')
+    var firstname = localStorage.getItem('firstname')
+    var lastname = localStorage.getItem('lastname')
+    var phone = localStorage.getItem('phone')
     if (userEmail) {
-        var amount = document.querySelector("#final-amt").innerHTML
-        var options = {
-            "key": "rzp_test_rGbrc5hXxJ9r9I",
-            "amount": parseInt(amount) * 100,
-            "name": "prateek jain",
-            "description": desc,
-            "image": "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
-            "handler": function (response) {
-                if (response.razorpay_payment_id) {
-                    paymentStatus = 1
-                    if (paymentStatus) {
-                        $.each(cartData, function (index, item) {
-                            document.getElementById("button" + item.id).disabled = false
-                        })
-                        document.getElementById("final-amt").innerHTML = 0
-                        location.href = './index.html'
+        if (window.confirm('You are already logged in..Continue checkout')) {
+            var amount = document.querySelector("#final-amt").innerHTML
+            var options = {
+                "key": "rzp_test_rGbrc5hXxJ9r9I",
+                "amount": parseInt(amount) * 100,
+                "name": firstname + lastname,
+                "description": desc,
+                "image": "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
+                "handler": function (response) {
+                    if (response.razorpay_payment_id > 0) {
+                        paymentStatus = 1
+                        if (paymentStatus) {
+                            $.each(cartData, function (index, item) {
+                                document.getElementById("button" + item.id).disabled = false
+                            })
+                            document.getElementById("final-amt").innerHTML = 0
+                            location.href = './index.html'
+                        }
                     }
+                },
+                "prefill": {
+                    "name": "prateek jain",
+                    "email": userEmail,
+                    "contact": phone
+                },
+                "notes": {
+                    "address": "123,delhi"
+                },
+                "theme": {
+                    "color": "#C82333"
                 }
-            },
-            "prefill": {
-                "name": "prateek jain",
-                "email": userEmail,
-                "contact": '+919123456780'
-            },
-            "notes": {
-                "address": "123,delhi"
-            },
-            "theme": {
-                "color": "#C82333"
+            };
+            var propay = new Razorpay(options);
+            propay.open();
+            cartData = []
+            UpdateCart()
+        } else {
+            if ($("#cart-table").is(":visible")) {
+                document.querySelector(".checkout").innerHTML = "Back to cart"
+            } else {
+                document.querySelector(".checkout").innerHTML = "Checkout"
             }
-        };
-        var propay = new Razorpay(options);
-        propay.open();
-        cartData = []
-        UpdateCart()
+            $("#cart-table").toggle();
+        }
     } else {
         $("#checkout-form").toggle();
     }
@@ -163,6 +175,9 @@ function store() {
     var userEmail = document.getElementById('email');
     var userPwd = document.getElementById('pw');
     localStorage.setItem('email', userEmail.value);
+    localStorage.setItem('firstname', document.getElementById('fname').value);
+    localStorage.setItem('lastname', document.getElementById('lname').value);
+    localStorage.setItem('phone', document.getElementById('tel').value);
     localStorage.setItem('pw', userPwd.value);
 }
 function check() {
@@ -204,7 +219,8 @@ function check() {
         };
         var propay = new Razorpay(options);
         propay.open();
-    } else {
+    } 
+    else {
         alert('Invalid credentials');
     }
 }

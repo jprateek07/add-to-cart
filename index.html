@@ -163,12 +163,24 @@
             <h5 class="text-center text-dark">register-form</h5>
             <form id="register-form">
               <div class="form-group">
+                <label for="fname">First name:</label>
+                <input type="text" class="form-control" placeholder="Enter first name" id="fname" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name:</label>
+                <input type="text" class="form-control" placeholder="Enter last name" id="lname" required>
+              </div>
+              <div class="form-group">
+                <label for="tel">Phone number:</label>
+                <input type="tel" class="form-control" placeholder="Phone no." id="tel" required>
+              </div>
+              <div class="form-group">
                 <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="email">
+                <input type="email" class="form-control" placeholder="Enter email" id="email" required>
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="pw">
+                <input type="password" class="form-control" pattern="^[a-z]{7,10}$" placeholder="Enter password  format: a-z 7-14 digits" id="pw" required>
               </div>
               <button id="rgstr_btn" type="submit" class="btn btn-success" onClick="store()">Register</button>
             </form>
@@ -176,11 +188,11 @@
             <form id="login-form">
               <div class="form-group">
                 <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="userEmail">
+                <input type="email" class="form-control" placeholder="Enter email" id="userEmail" required>
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="userPw">
+                <input type="password" class="form-control" placeholder="Enter password" id="userPw" required>
               </div>
               <button id="login_btn" type="submit" value="Login" class="btn btn-success"
                 onClick="check()">Login</button>

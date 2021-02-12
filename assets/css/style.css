@@ -172,4 +172,10 @@ footer {
     .total-amount h4 {
         font-size: 20px;
     }
+    .banner-card img{
+        height: 180px;
+    }
+    .banner-card{
+        width: 100%;
+    }
 }

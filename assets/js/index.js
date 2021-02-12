@@ -13,7 +13,6 @@ $.ajax({
         alert(err);
     }
 })
-
 function loadData(jsonData) {
     checkCartButton()
     data = jsonData
@@ -104,22 +103,18 @@ function deleteRow(r, id) {
     }
 }
 $(".checkout").click(function () {
-    var desc=''
-    $.each(cartData,function(index,item){
-        if(cartData.length==1)
-        {
-            desc=item.itemName
-        }
-        else{
-            desc=item.itemName+' | '+desc
+    var desc = ''
+    $.each(cartData, function (index, item) {
+        if (cartData.length == 1) {
+            desc = item.itemName
+        } else {
+            desc = item.itemName + ' | ' + desc
         }
     })
-    if($("#cart-table").is(":visible"))
-    {
-        document.querySelector(".checkout").innerHTML="Back to cart"
-    }
-    else{
-        document.querySelector(".checkout").innerHTML="Checkout"
+    if ($("#cart-table").is(":visible")) {
+        document.querySelector(".checkout").innerHTML = "Back to cart"
+    } else {
+        document.querySelector(".checkout").innerHTML = "Checkout"
     }
     $("#cart-table").toggle();
     userEmail = localStorage.getItem('email')
@@ -128,10 +123,10 @@ $(".checkout").click(function () {
         var amount = document.querySelector("#final-amt").innerHTML
         var options = {
             "key": "rzp_test_rGbrc5hXxJ9r9I",
-            "amount": parseInt(amount) * 100, 
+            "amount": parseInt(amount) * 100,
             "name": "prateek jain",
             "description": desc,
-            "image": "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png", 
+            "image": "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
             "handler": function (response) {
                 if (response.razorpay_payment_id) {
                     paymentStatus = 1
@@ -140,20 +135,20 @@ $(".checkout").click(function () {
                             document.getElementById("button" + item.id).disabled = false
                         })
                         document.getElementById("final-amt").innerHTML = 0
-                        location.href='./'
+                        location.href = './'
                     }
                 }
             },
             "prefill": {
-                "name": "prateek jain", 
-                "email": userEmail, 
+                "name": "prateek jain",
+                "email": userEmail,
                 "contact": '+919123456780'
             },
             "notes": {
-                "address": "123,delhi" 
+                "address": "123,delhi"
             },
             "theme": {
-                "color": "#C82333" 
+                "color": "#C82333"
             }
         };
         var propay = new Razorpay(options);
@@ -170,7 +165,6 @@ function store() {
     localStorage.setItem('email', userEmail.value);
     localStorage.setItem('pw', userPwd.value);
 }
-
 function check() {
     var storedEmail = localStorage.getItem('email');
     var storedPw = localStorage.getItem('pw');
@@ -192,7 +186,7 @@ function check() {
                             document.getElementById("button" + item.id).disabled = false
                         })
                         document.getElementById("final-amt").innerHTML = 0
-                        location.href='./'
+                        location.href = './'
                     }
                 }
             },
@@ -210,12 +204,10 @@ function check() {
         };
         var propay = new Razorpay(options);
         propay.open();
-    }
-    else {
+    } else {
         alert('Invalid credentials');
     }
 }
-
 function checkCartButton() {
     if (document.getElementById("lblCartCount").innerHTML == 0) {
         document.getElementById("cart").disabled = true

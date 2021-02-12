@@ -3,7 +3,6 @@ var data = []
 var userEmail = localStorage.getItem('email')
 var userPwd = localStorage.getItem('pw');
 var paymentStatus = 0
-checkCartButton()
 $.ajax({
     url: 'assets/data.json',
     dataType: 'json',
@@ -16,6 +15,7 @@ $.ajax({
 })
 
 function loadData(jsonData) {
+    checkCartButton()
     data = jsonData
     $.each(jsonData, function (index, item) {
         if (item.category == "vegetable") {
@@ -104,6 +104,23 @@ function deleteRow(r, id) {
     }
 }
 $(".checkout").click(function () {
+    var desc=''
+    $.each(cartData,function(index,item){
+        if(cartData.length==1)
+        {
+            desc=item.itemName
+        }
+        else{
+            desc=item.itemName+' | '+desc
+        }
+    })
+    if($("#cart-table").is(":visible"))
+    {
+        document.querySelector(".checkout").innerHTML="Back to cart"
+    }
+    else{
+        document.querySelector(".checkout").innerHTML="Checkout"
+    }
     $("#cart-table").toggle();
     userEmail = localStorage.getItem('email')
     userPwd = localStorage.getItem('pw')
@@ -113,8 +130,8 @@ $(".checkout").click(function () {
             "key": "rzp_test_rGbrc5hXxJ9r9I",
             "amount": parseInt(amount) * 100, 
             "name": "prateek jain",
-            "description": "description",
-            "image": "../assets/images/apple.png", 
+            "description": desc,
+            "image": "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png", 
             "handler": function (response) {
                 if (response.razorpay_payment_id) {
                     paymentStatus = 1
@@ -147,32 +164,6 @@ $(".checkout").click(function () {
         $("#checkout-form").toggle();
     }
 });
-function showPopUp() {
-    if (userEmail.trim().length > 0) {
-        $('[data-toggle="popover"]').popover({
-            title: "<h5>" + userEmail + "</h5>",
-            content: "<p class='btn btn-danger text-center' id='logout'>Logout</p>"
-        });
-
-    } else {
-        $('[data-toggle="popover"]').popover({
-            title: "<h5 class='btn btn-info' id='login-form'>Login</h5>",
-            content: "<p>you are not logged in</p>"
-        });
-    }
-}
-$(document).on("click", "#logout", function () {
-    localStorage.setItem('email', '');
-    localStorage.setItem('pw', '');
-    $(this).parents(".popover").popover('hide');
-    cartData = []
-    location.href = './'
-})
-$(document).on("click", "#login-form", function () {
-    $(this).parents(".popover").popover('hide');
-    location.href = "login.html"
-})
-
 function store() {
     var userEmail = document.getElementById('email');
     var userPwd = document.getElementById('pw');
@@ -232,6 +223,3 @@ function checkCartButton() {
         document.getElementById("cart").disabled = false
     }
 }
-// paypal config keys
-// key id:rzp_test_rGbrc5hXxJ9r9I
-//key secret:T547NJt8PqDOT8YjFyWoTMJo

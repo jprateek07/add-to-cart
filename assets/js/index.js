@@ -219,7 +219,8 @@ function check() {
         };
         var propay = new Razorpay(options);
         propay.open();
-    } else {
+    }
+    else {
         alert('Invalid credentials');
     }
 }

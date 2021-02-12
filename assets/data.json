@@ -74,7 +74,7 @@
         "id": 10,
         "itemName": "broccoli",
         "itemPrice": 15,
-        "itemSrc": "assets/images/broccoli.png",
+        "itemSrc": "assets/images/Broccoli.png",
         "category": "vegetable",
         "min_purchase_quantity": 1
     },

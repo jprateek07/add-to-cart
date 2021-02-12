@@ -132,7 +132,7 @@ $(".checkout").click(function () {
                 "description": desc,
                 "image": "https://icons-for-free.com/iconfiles/png/512/business+costume+male+man+office+user+icon-1320196264882354682.png",
                 "handler": function (response) {
-                    if (response.razorpay_payment_id > 0) {
+                    if (response.razorpay_payment_id) {
                         paymentStatus = 1
                         if (paymentStatus) {
                             $.each(cartData, function (index, item) {
@@ -231,3 +231,31 @@ function checkCartButton() {
         document.getElementById("cart").disabled = false
     }
 }
+function showPopUp() {
+    if (userEmail.trim().length > 0) {
+        var fname=localStorage.getItem("firstname")
+        var lname=localStorage.getItem("lastname")
+        var phone=localStorage.getItem("phone")
+        $('[data-toggle="popover"]').popover({
+            title: "<h5>" + fname+" "+lname + "</h5><hr><p>+91-"+phone+"</p><p>"+userEmail+"</p>",
+            content: "<p class='btn btn-danger text-center' id='logout'>Logout</p>"
+        });
+
+    } else {
+        $('[data-toggle="popover"]').popover({
+            title: "<h5 class='btn btn-info' id='login-form'>Login</h5>",
+            content: "<p>you are not logged in</p>"
+        });
+    }
+}
+$(document).on("click", "#logout", function () {
+    localStorage.setItem('email', '');
+    localStorage.setItem('pw', '');
+    $(this).parents(".popover").popover('hide');
+    cartData = []
+    location.href = './'
+})
+$(document).on("click", "#login-form", function () {
+    $(this).parents(".popover").popover('hide');
+    location.href = "login.html"
+})

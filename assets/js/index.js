@@ -80,7 +80,6 @@ function decrement(curr, id) {
 function UpdateCart() {
     $("#cart-items").empty()
     for (index in cartData) {
-        console.log("inside")
         $("#cart-items").append("<tr>" +
             "<td><img src='" + cartData[index].itemSrc + "' class='cart-item-image'><p class='text-center cart-item-name'>" + cartData[index].itemName + "</p></td>" +
             "<td><div class='d-flex align-items-center'><div class='dec-btn' onclick='decrement(this," + cartData[index].id + ")'><i class='fas fa-minus text-white'></i></div><span class='btn-inner--text'><input type='number' name='qty' class='text-center' id='qty' min='1' value='1'></span><div class='dec-btn' onclick='increment(this," + cartData[index].id + ")'><i class='fa fa-plus text-white' aria-hidden='true'></i></div></div></td>" +
@@ -108,7 +107,6 @@ $(".checkout").click(function () {
     $("#cart-table").toggle();
     userEmail = localStorage.getItem('email')
     userPwd = localStorage.getItem('pw')
-    console.log(cartData)
     if (userEmail) {
         var amount = document.querySelector("#final-amt").innerHTML
         var options = {
@@ -120,6 +118,13 @@ $(".checkout").click(function () {
             "handler": function (response) {
                 if (response.razorpay_payment_id) {
                     paymentStatus = 1
+                    if (paymentStatus) {
+                        $.each(cartData, function (index, item) {
+                            document.getElementById("button" + item.id).disabled = false
+                        })
+                        document.getElementById("final-amt").innerHTML = 0
+                        location.href='./'
+                    }
                 }
             },
             "prefill": {
@@ -192,12 +197,11 @@ function check() {
                 if (response.razorpay_payment_id) {
                     var paymentStatus = 1
                     if (paymentStatus) {
-                        console.log(cartData)
                         $.each(cartData, function (index, item) {
-                            console.log(item.id)
                             document.getElementById("button" + item.id).disabled = false
                         })
                         document.getElementById("final-amt").innerHTML = 0
+                        location.href='./'
                     }
                 }
             },
@@ -213,7 +217,6 @@ function check() {
                 "color": "#C82333"
             }
         };
-        console.log(response);
         var propay = new Razorpay(options);
         propay.open();
     } else {

@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 input {
     background-color: transparent;
     border: 0px solid;
@@ -15,21 +15,17 @@ input {
     width: 90%;
     outline: none;
 }
-
 input:focus {
     outline: none;
 }
-
 .about-img {
     object-fit: cover;
     height: 334px;
     width: 334px;
 }
-
 #qty {
     width: 50px;
 }
-
 .vegetables {
     height: 148px;
     width: 100%;
@@ -37,37 +33,29 @@ input:focus {
     border: 1px solid white;
     border-radius: 50%;
 }
-
 .vegetables:hover {
     transform: scale(1.2);
     transition: transform 0.5s ease-in-out;
 }
-
 #product-table {
     box-shadow: -1px 7px 21px -7px rgb(31 45 61 / 10%);
 }
-
 .checked {
     color: orange;
 }
-
 .cart-item-image {
     height: 75px;
     width: 75px;
 }
-
 .banner-card {
     width: 14rem;
 }
-
 .banner-card img {
     border-radius: 10%;
 }
-
 #cart-table tr td {
     vertical-align: middle;
 }
-
 .badge {
     padding-left: 9px;
     padding-right: 9px;
@@ -75,12 +63,6 @@ input:focus {
     -moz-border-radius: 9px;
     border-radius: 9px;
 }
-
-.label-warning[href],
-.badge-warning[href] {
-    background-color: #c67605;
-}
-
 #lblCartCount {
     font-size: 12px;
     background: #ff0000;
@@ -89,16 +71,9 @@ input:focus {
     vertical-align: top;
     margin-left: -10px;
 }
-
-.about-image-section {
-    background-color: rgb(255 204 204);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-}
-
 .cart-item-name {
     font-size: 1rem;
 }
-
 .dec-btn {
     height: 23px;
     width: 23px;
@@ -107,7 +82,6 @@ input:focus {
     text-align: center;
     cursor: pointer;
 }
-
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -115,15 +89,9 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-
-.cart-animation {
-    animation: animate 0.3s ease;
-}
-
 #checkout-form {
     display: none;
 }
-
 .banner-card img {
     height: 95px;
     width: 80%;
@@ -131,44 +99,24 @@ input[type=number]::-webkit-outer-spin-button {
     border-top-right-radius: 0;
     border-bottom-left-radius: calc(0.25rem - 1px);
 }
-
 footer {
     height: 66px;
 }
-
-@keyframes animate {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(40px) scale(0.5);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
 /* media query */
 @media screen and (max-width:767px) {
     #qty {
         width: 17px;
     }
-
     .cart-item-image {
         height: 40px;
         width: 40px;
     }
-
     .carousel img {
         height: 220px;
     }
-
     .nav-item .login-btn {
         display: none;
     }
-
     .total-amount h4 {
         font-size: 20px;
     }

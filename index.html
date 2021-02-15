@@ -196,7 +196,7 @@
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="userPw" required>
+                <input type="password" class="form-control" pattern="^[a-z]{7,10}$" placeholder="Enter password  format: a-z 7-14 digits" id="userPw" required>
               </div>
               <button id="login_btn" type="submit" value="Login" class="btn btn-success"
                 onClick="check()">Login</button>

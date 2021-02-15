@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +22,9 @@
       <a class="navbar-brand fa-2x" href="#">Marketo</a>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <button class="btn btn-danger login-btn" data-toggle="popover" data-placement="bottom" data-html="true"
-            onclick="showPopUp()"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button>
-        </li>
-        <li class="nav-item">
-          <button class="nav-link btn btn-danger animate__animated " data-toggle="modal" data-target="#myModal" id="cart"><i
-              class="fa fa-shopping-cart fa-2x text-white" aria-hidden="true"></i><span class='badge badge-danger'
-              id='lblCartCount'> 0 </span>
+          <button class="nav-link btn btn-danger animate__animated " data-toggle="modal" data-target="#myModal"
+            id="cart"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="true"></i><span
+              class='badge badge-danger' id='lblCartCount'> 0 </span>
           </button>
         </li>
       </ul>
@@ -62,7 +59,7 @@
     <h2>Shop by category</h2>
     <div class="row">
       <div class="col-md-3 col-12 my-3">
-        <div class="card banner-card" data-aos="fade-up-right" >
+        <div class="card banner-card" data-aos="fade-up-right">
           <img src="assets/images/vegetable.jpg" class="card-img-top pt-md-2 pt-2" alt="...">
           <div class="card-body">
             <h5 class="card-title">VEGETABLES</h5>
@@ -72,7 +69,7 @@
         </div>
       </div>
       <div class="col-md-3 col-12 my-3">
-        <div class="card banner-card" data-aos="fade-up-right" >
+        <div class="card banner-card" data-aos="fade-up-right">
           <img src="assets/images/fruits.jpg" class="card-img-top pt-md-2 pt-2" alt="...">
           <div class="card-body">
             <h5 class="card-title">Fruits</h5>
@@ -82,7 +79,7 @@
         </div>
       </div>
       <div class="col-md-3 col-12 my-3">
-        <div class="card banner-card" data-aos="fade-up-left" >
+        <div class="card banner-card" data-aos="fade-up-left">
           <img src="assets/images/mens.jpg" class="card-img-top pt-md-2 pt-2" alt="...">
           <div class="card-body">
             <h5 class="card-title">Mens wear</h5>
@@ -135,7 +132,7 @@
 
   <!-- Footer section -->
   <footer class="container-fluid text-center bg-danger d-flex justify-content-center align-items-center">
-    <h6 class="text-white">Developed with <span class="text-white">&hearts;</span>  by alvrio labs</h6>
+    <h6 class="text-white">Developed with <span class="text-white">&hearts;</span> by alvrio labs</h6>
   </footer>
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
@@ -184,7 +181,8 @@
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" pattern="^[a-z]{7,10}$" placeholder="Enter password  format: a-z 7-14 digits" id="pw" required>
+                <input type="password" class="form-control" pattern="^[a-z]{7,10}$"
+                  placeholder="Enter password  format: a-z 7-14 digits" id="pw" required>
               </div>
               <button id="rgstr_btn" type="submit" class="btn btn-success" onClick="store()">Register</button>
             </form>
@@ -196,7 +194,8 @@
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" pattern="^[a-z]{7,10}$" placeholder="Enter password  format: a-z 7-14 digits" id="userPw" required>
+                <input type="password" class="form-control" pattern="^[a-z]{7,10}$"
+                  placeholder="Enter password  format: a-z 7-14 digits" id="userPw" required>
               </div>
               <button id="login_btn" type="submit" value="Login" class="btn btn-success"
                 onClick="check()">Login</button>
@@ -219,4 +218,5 @@
     AOS.init();
   </script>
 </body>
+
 </html>
